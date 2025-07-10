@@ -626,4 +626,573 @@ queue_styles = {
 ⟡ ʟᴇɴɢᴛʜ: {}
 ⟡ ᴘᴏꜱɪᴛɪᴏɴ: #{}""",
 
-    6: """
+    6: """🌊 𝙌𝙪𝙚𝙪𝙚 𝙐𝙥𝙙𝙖𝙩𝙚𝙙 🌊
+┏━━━━━━━━━━━
+┣ 𝙈𝙤𝙙𝙚 » {}
+┣ 𝙏𝙞𝙩𝙡𝙚 » {}
+┣ 𝙇𝙚𝙣𝙜𝙩𝙝 » {}
+┗ 𝙌𝙪𝙚𝙪𝙚 » #{}""",
+
+    7: """👑 𝖀𝖕𝖈𝖔𝖒𝖎𝖓𝖌 𝕿𝖗𝖆𝖈𝖐 👑
+▰▰▰▰▰▰▰▰▰▰▰▰▰
+◈ 𝕸𝖔𝖉𝖊: {}
+◈ 𝕿𝖎𝖙𝖑𝖊: {}
+◈ 𝕯𝖚𝖗𝖆𝖙𝖎𝖔𝖓: {}
+◈ 𝕻𝖔𝖘𝖎𝖙𝖎𝖔𝖓: #{}""",
+
+    8: """✦ 𝐄𝐧𝐪𝐮𝐞𝐮𝐞𝐝 𝐌𝐮𝐬𝐢𝐜 ✦
+═════════════
+★ Mode: {}
+★ Title: {}
+★ Duration: {}
+★ Position: #{}""",
+
+    9: """🎧 ADDED ＴＯ ＱＵＥＵＥ 🎧
+┌───────────┐
+│ ＭＯＤ: {}
+│ ＴＲＫ: {}
+│ ＴＩＭ: {}
+└ ＰＯＳ: #{}""",
+
+    10: """⚡ 【﻿ＱＵＥＵＥ　ＵＰＤＡＴＥ】 ⚡
+▀▀▀▀▀▀▀▀▀▀▀▀▀
+➺ Ｍｏｄｅ : {}
+➺ Ｔｒａｃｋ : {}
+➺ Ｌｅｎｇｔｈ : {}
+➺ Ｏｒｄｅｒ : #{}""",
+
+    11: """🔮 **Tʀᴀᴄᴋ Aᴅᴅᴇᴅ ᴛᴏ Qᴜᴇᴜᴇ** 🔮
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+• **Mᴏᴅᴇ** » {}
+• **Tɪᴛʟᴇ** » {}
+• **Dᴜʀᴀᴛɪᴏɴ** » {}
+• **Pᴏsɪᴛɪᴏɴ** » #{}""",
+
+    12: """✧･ﾟ: *✧･ﾟ 𝗔𝗱𝗱𝗲𝗱 𝘁𝗼 𝗤𝘂𝗲𝘂𝗲 ･ﾟ*:･ﾟ✧
+━━━━━━━━━━━━━
+〃 𝗠𝗼𝗱𝗲 » {}
+〃 𝗧𝗶𝘁𝗹𝗲 » {}
+〃 𝗗𝘂𝗿𝗮𝘁𝗶𝗼𝗻 » {}
+〃 𝗢𝗿𝗱𝗲𝗿 » #{}""",
+}
+
+
+play_styles = {
+    1: """🌈 𝗡𝗢𝗪 𝗣𝗟𝗔𝗬𝗜𝗡𝗚 »✨
+┏━━━━━━━━━━━━
+┣ 𝗠𝗼𝗱𝗲 » {}
+┣ 𝗧𝗶𝘁𝗹𝗲 » {}
+┣ 𝗗𝘂𝗿𝗮𝘁𝗶𝗼𝗻 » {}
+┗ 𝗥𝗲𝗾𝘂𝗲𝘀𝘁𝗲𝗱 𝗯𝘆 » {}""",
+
+    2: """✧･ﾟ 𝓝𝓸𝔀 𝓟𝓵𝓪𝔂𝓲𝓷𝓰 ･ﾟ✧
+━━━━━━━━━━━━━
+♪ 𝓜𝓸𝓭𝓮 » {}
+♪ 𝓣𝓲𝓽𝓵𝓮 » {}
+♪ 𝓛𝓮𝓷𝓰𝓽𝓱 » {}
+♪ 𝓡𝓮𝓺𝓾𝓮𝓼𝓽𝓮𝓭 𝓫𝔂 » {}""",
+
+    3: """⋆｡°✩ 𝐍𝐨𝐰 𝐏𝐥𝐚𝐲𝐢𝐧𝐠 ✩°｡⋆
+┏━━━━━━━━━━━━
+┣ 𝐌𝐨𝐝𝐞 » {}
+┣ 𝐓𝐫𝐚𝐜𝐤 » {}
+┣ 𝐓𝐢𝐦𝐞 » {}
+┗ 𝐑𝐞𝐪𝐮𝐞𝐬𝐭𝐞𝐝 𝐛𝐲 » {}""",
+
+    4: """⚡ ℕ𝕠𝕨 ℙ𝕝𝕒𝕪𝕚𝕟𝕘 ⚡
+╔════════════
+║ 𝕄𝕠𝕕𝕖: {}
+║ 𝕋𝕚𝕥𝕝𝕖: {}
+║ 𝔻𝕦𝕣𝕒𝕥𝕚𝕠𝕟: {}
+╚ ℝ𝕖𝕢𝕦𝕖𝕤𝕥𝕖𝕕 𝕓𝕪: {}""",
+
+    5: """• ᴄᴜʀʀᴇɴᴛ ᴛʀᴀᴄᴋ •
+─────────────
+⟡ ᴍᴏᴅᴇ: {}
+⟡ ᴛɪᴛʟᴇ: {}
+⟡ ʟᴇɴɢᴛʜ: {}
+⟡ ᴜꜱᴇʀ: {}""",
+
+    6: """🌊 𝙉𝙤𝙬 𝙋𝙡𝙖𝙮𝙞𝙣𝙜 🌊
+┏━━━━━━━━━━━━
+┣ 𝙈𝙤𝙙𝙚 » {}
+┣ 𝙏𝙞𝙩𝙡𝙚 » {}
+┣ 𝙇𝙚𝙣𝙜𝙩𝙝 » {}
+┗ 𝘿𝙅 » {}""",
+
+    7: """👑 𝕽𝖔𝖞𝖆𝖑 𝕻𝖑𝖆𝖞𝖇𝖆𝖈𝖐 👑
+▰▰▰▰▰▰▰▰▰▰▰▰▰
+◈ 𝕸𝖔𝖉𝖊: {}
+◈ 𝕿𝖎𝖙𝖑𝖊: {}
+◈ 𝕯𝖚𝖗𝖆𝖙𝖎𝖔𝖓: {}
+◈ 𝕽𝖊𝖖𝖚𝖊𝖘𝖙𝖊𝖉 𝖇𝖞: {}""",
+
+    8: """✦ 𝐏𝐥𝐚𝐲𝐢𝐧𝐠 𝐌𝐮𝐬𝐢𝐜 ✦
+═════════════
+★ Mode: {}
+★ Title: {}
+★ Duration: {}
+★ Requester: {}""",
+
+    9: """🎧 ＮＯＷ ＰＬＡＹＩＮＧ 🎧
+┌───────────┐
+│ ＭＯＤ: {}
+│ ＴＲＫ: {}
+│ ＴＩＭ: {}
+└ ＵＳＲ: {}""",
+
+    10: """⚡ 【﻿ＮＯＷ　ＰＬＡＹＩＮＧ】 ⚡
+▀▀▀▀▀▀▀▀▀▀▀▀
+➺ Ｍｏｄｅ : {}
+➺ Ｔｒａｃｋ : {}
+➺ Ｌｅｎｇｔｈ : {}
+➺ Ｒｅｑｕｅｓｔｅｄ ｂｙ : {}""",
+
+    11: """🔮 **Nᴏᴡ Pʟᴀʏɪɴɢ** 🔮
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+• **Mᴏᴅᴇ** » {}
+• **Tɪᴛʟᴇ** » {}
+• **Dᴜʀᴀᴛɪᴏɴ** » {}
+• **Rᴇǫᴜᴇsᴛᴇᴅ ʙʏ** » {}""",
+
+    12: """✧･ﾟ: *✧･ﾟ 𝗡𝗼𝘄 𝗣𝗹𝗮𝘆𝗶𝗻𝗴 ･ﾟ*:･ﾟ✧
+━━━━━━━━━━━━━━━━
+〃 𝗠𝗼𝗱𝗲 » {}
+〃 𝗧𝗶𝘁𝗹𝗲 » {}
+〃 𝗗𝘂𝗿𝗮𝘁𝗶𝗼𝗻 » {}
+〃 𝗥𝗲𝗾𝘂𝗲𝘀𝘁𝗲𝗱 𝗯𝘆 » {}""",
+}
+
+def convert_bytes(size: float) -> str:
+    """humanize size"""
+    if not size:
+        return ""
+    power = 1024
+    t_n = 0
+    power_dict = {0: " ", 1: "Ki", 2: "Mi", 3: "Gi", 4: "Ti"}
+    while size > power:
+        size /= power
+        t_n += 1
+    return "{:.2f} {}B".format(size, power_dict[t_n])
+
+
+async def int_to_alpha(user_id: int) -> str:
+    alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]
+    text = ""
+    user_id = str(user_id)
+    for i in user_id:
+        text += alphabet[int(i)]
+    return text
+
+
+async def alpha_to_int(user_id_alphabet: str) -> int:
+    alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j"]
+    user_id = ""
+    for i in user_id_alphabet:
+        index = alphabet.index(i)
+        user_id += str(index)
+    user_id = int(user_id)
+    return user_id
+
+
+def time_to_seconds(time):
+    stringt = str(time)
+    return sum(int(x) * 60**i for i, x in enumerate(reversed(stringt.split(":"))))
+
+
+def seconds_to_min(seconds):
+    if seconds is not None:
+        seconds = int(seconds)
+        d, h, m, s = (
+            seconds // (3600 * 24),
+            seconds // 3600 % 24,
+            seconds % 3600 // 60,
+            seconds % 3600 % 60,
+        )
+        if d > 0:
+            return "{:02d}:{:02d}:{:02d}:{:02d}".format(d, h, m, s)
+        elif h > 0:
+            return "{:02d}:{:02d}:{:02d}".format(h, m, s)
+        elif m > 0:
+            return "{:02d}:{:02d}".format(m, s)
+        elif s > 0:
+            return "00:{:02d}".format(s)
+    return "-"
+
+
+def speed_converter(seconds, speed):
+    if str(speed) == str("0.5"):
+        seconds = seconds * 2
+    if str(speed) == str("0.75"):
+        seconds = seconds + ((50 * seconds) // 100)
+    if str(speed) == str("1.5"):
+        seconds = seconds - ((25 * seconds) // 100)
+    if str(speed) == str("2.0"):
+        seconds = seconds - ((50 * seconds) // 100)
+    collect = seconds
+    if seconds is not None:
+        seconds = int(seconds)
+        d, h, m, s = (
+            seconds // (3600 * 24),
+            seconds // 3600 % 24,
+            seconds % 3600 // 60,
+            seconds % 3600 % 60,
+        )
+        if d > 0:
+            convert = "{:02d}:{:02d}:{:02d}:{:02d}".format(d, h, m, s)
+            return convert, collect
+        elif h > 0:
+            convert = "{:02d}:{:02d}:{:02d}".format(h, m, s)
+            return convert, collect
+        elif m > 0:
+            convert = "{:02d}:{:02d}".format(m, s)
+            return convert, collect
+        elif s > 0:
+            convert = "00:{:02d}".format(s)
+            return convert, collect
+    return "-"
+
+
+def check_duration(file_path):
+    command = [
+        "ffprobe",
+        "-loglevel",
+        "quiet",
+        "-print_format",
+        "json",
+        "-show_format",
+        "-show_streams",
+        file_path,
+    ]
+
+    pipe = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+    out, err = pipe.communicate()
+    _json = json.loads(out)
+
+    if "format" in _json:
+        if "duration" in _json["format"]:
+            return float(_json["format"]["duration"])
+
+    if "streams" in _json:
+        for s in _json["streams"]:
+            if "duration" in s:
+                return float(s["duration"])
+
+    return "Unknown"
+
+
+formats = [
+    "webm",
+    "mkv",
+    "flv",
+    "vob",
+    "ogv",
+    "ogg",
+    "rrc",
+    "gifv",
+    "mng",
+    "mov",
+    "avi",
+    "qt",
+    "wmv",
+    "yuv",
+    "rm",
+    "asf",
+    "amv",
+    "mp4",
+    "m4p",
+    "m4v",
+    "mpg",
+    "mp2",
+    "mpeg",
+    "mpe",
+    "mpv",
+    "m4v",
+    "svi",
+    "3gp",
+    "3g2",
+    "mxf",
+    "roq",
+    "nsv",
+    "flv",
+    "f4v",
+    "f4p",
+    "f4a",
+    "f4b",
+]
+
+async def convert_to_image(message, client) -> [None, str]:
+    """Convert Most Media Formats To Raw Image"""
+    if not message:
+        return None
+    if not message.reply_to_message:
+        return None
+    final_path = None
+    if not (
+        message.reply_to_message.video
+        or message.reply_to_message.photo
+        or message.reply_to_message.sticker
+        or message.reply_to_message.media
+        or message.reply_to_message.animation
+        or message.reply_to_message.audio
+    ):
+        return None
+    if message.reply_to_message.photo:
+        final_path = await message.reply_to_message.download()
+    elif message.reply_to_message.sticker:
+        if message.reply_to_message.sticker.mime_type == "image/webp":
+            final_path = "webp_to_png_s_proton.png"
+            path_s = await message.reply_to_message.download()
+            im = Image.open(path_s)
+            im.save(final_path, "PNG")
+        else:
+            path_s = await client.download_media(message.reply_to_message)
+            final_path = "lottie_proton.png"
+            cmd = (
+                f"lottie_convert.py --frame 0 -if lottie -of png {path_s} {final_path}"
+            )
+            await run_cmd(cmd)
+    elif message.reply_to_message.audio:
+        thumb = message.reply_to_message.audio.thumbs[0].file_id
+        final_path = await client.download_media(thumb)
+    elif message.reply_to_message.video or message.reply_to_message.animation:
+        final_path = "fetched_thumb.png"
+        vid_path = await client.download_media(message.reply_to_message)
+        await run_cmd(f"ffmpeg -i {vid_path} -filter:v scale=500:500 -an {final_path}")
+    return final_path                                                                                     
+
+
+
+
+async def resize_media(media: str, video: bool, fast_forward: bool) -> str:
+    if video:
+        info_ = Media_Info.data(media)
+        width = info_["pixel_sizes"][0]
+        height = info_["pixel_sizes"][1]
+        sec = info_["duration_in_ms"]
+        s = round(float(sec)) / 1000
+
+        if height == width:
+            height, width = 512, 512
+        elif height > width:
+            height, width = 512, -1
+        elif width > height:
+            height, width = -1, 512
+
+        resized_video = f"{media}.webm"
+        if fast_forward:
+            if s > 3:
+                fract_ = 3 / s
+                ff_f = round(fract_, 2)
+                set_pts_ = ff_f - 0.01 if ff_f > fract_ else ff_f
+                cmd_f = f"-filter:v 'setpts={set_pts_}*PTS',scale={width}:{height}"
+            else:
+                cmd_f = f"-filter:v scale={width}:{height}"
+        else:
+            cmd_f = f"-filter:v scale={width}:{height}"
+        fps_ = float(info_["frame_rate"])
+        fps_cmd = "-r 30 " if fps_ > 30 else ""
+        cmd = f"ffmpeg -i {media} {cmd_f} -ss 00:00:00 -to 00:00:03 -an -c:v libvpx-vp9 {fps_cmd}-fs 256K {resized_video}"
+        _, error, __, ___ = await run_cmd(cmd)
+        os.remove(media)
+        return resized_video
+
+    image = Image.open(media)
+    maxsize = 512
+    scale = maxsize / max(image.width, image.height)
+    new_size = (int(image.width * scale), int(image.height * scale))
+
+    image = image.resize(new_size, Image.LANCZOS)
+    resized_photo = "sticker.png"
+    image.save(resized_photo)
+    os.remove(media)
+    return resized_photo
+
+
+import textwrap
+async def add_text_img(image_path, text):
+    font_size = 12
+    stroke_width = 1
+
+    if ";" in text:
+        upper_text, lower_text = text.split(";")
+    else:
+        upper_text = text
+        lower_text = ""
+
+    img = Image.open(image_path).convert("RGBA")
+    img_info = img.info
+    image_width, image_height = img.size
+    font = ImageFont.truetype(
+        font="default.ttf",                                                                                       size=int(image_height * font_size) // 100,
+    )
+    draw = ImageDraw.Draw(img)
+
+    char_width, char_height = draw.textbbox((0, 0), 'A', font=font)[2:4]
+    chars_per_line = image_width // char_width
+    top_lines = textwrap.wrap(upper_text, width=chars_per_line)
+    bottom_lines = textwrap.wrap(lower_text, width=chars_per_line)
+
+    if top_lines:
+        y = 10
+        for line in top_lines:
+            line_width, line_height = draw.textbbox((0, 0), line, font=font)[2:4]
+            x = (image_width - line_width) / 2
+            draw.text(
+                (x, y),
+                line,
+                fill="white",
+                font=font,
+                stroke_width=stroke_width,
+            )
+            y += line_height
+
+    if bottom_lines:
+        y = image_height - char_height * len(bottom_lines) - 15
+        for line in bottom_lines:
+            line_width, line_height = draw.textbbox((0, 0), line, font=font)[2:4]
+            x = (image_width - line_width) / 2
+            draw.text(
+                (x, y),
+                line,
+                fill="black",
+                font=font,
+                stroke_width=stroke_width,
+            )
+            y += line_height
+
+    final_image = os.path.join("memify.webp")
+    img.save(final_image, **img_info)
+    return final_image
+
+
+
+
+async def hd_stream_closed_kicked(client, update):
+   logger.info(update)
+   try:
+       await remove_active_chat(update.chat_id)
+       queues[update.chat_id].clear()
+       playing[update.chat_id].clear()
+   except Exception as e:
+      logger.info(e)
+
+
+async def end(client, update):
+
+  try:
+        collection.update_one(
+            {"bot_id": clients["bot"].me.id},
+           {"$push": {'dates': datetime.datetime.now()}},
+            upsert=True
+        )
+  except Exception as e:
+        logger.info(f"Error saving playtime: {e}")
+  try:
+    if update.chat_id in queues and queues[update.chat_id]:
+      next_song = queues[update.chat_id].pop(0)
+      if update.chat_id in playing:
+       if update.stream_type == StreamEnded.Type.VIDEO:
+         await client.leave_call(update.chat_id)
+      playing[update.chat_id] = next_song
+      await join_call(next_song['message'], next_song['title'],
+next_song['yt_link'], next_song['chat'], next_song['by'], next_song['duration'], next_song['mode'], next_song['thumb'])
+    else:
+      logger.info(f"Song queue for chat {update.chat_id} is empty.")
+      await client.leave_call(update.chat_id)
+      await remove_active_chat(update.chat_id)
+      playing[update.chat_id].clear()
+  except Exception as e:
+    logger.info(f"Error in end function: {e}")
+
+from yt_dlp import YoutubeDL
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+
+
+
+async def join_call(message, title, youtube_link, chat, by, duration, mode, thumb):
+    audio_flags = MediaStream.Flags.IGNORE if mode == "audio" else None
+    position = len(queues.get(message.chat.id)) if queues.get(message.chat.id) else 0
+    try:
+        cookie_files = ['cook.txt', 'cooki.txt', 'cookie.txt', 'cookies.txt']
+        selected_cookie = random.choice(cookie_files)
+        await clients["call_py"].play(
+            chat.id,
+            MediaStream(
+youtube_link,
+AudioQuality.STUDIO,
+                VideoQuality.UHD_4K,
+                video_flags=audio_flags,
+                ytdlp_parameters=f"--cookies-from-browser chrome",
+),
+        )
+        played[message.chat.id] =time.time()
+        # Creating the inline keyboard with buttons arranged in two rows
+        keyboard = InlineKeyboardMarkup([
+            [
+                InlineKeyboardButton(text="▷", callback_data="resume"),
+                InlineKeyboardButton(text="II", callback_data="pause"),
+                InlineKeyboardButton(text="‣‣I" if position <1 else f"‣‣I({position})", callback_data="skip"),
+                InlineKeyboardButton(text="▢", callback_data="end"),
+            ],
+        [                                                                                           InlineKeyboardButton(
+                text=f"{smallcap('Add to group')}", url=f"https://t.me/{clients["bot"].me.username}?startgroup=true"
+            ),InlineKeyboardButton(
+                text="✖ Close",callback_data="close"
+            )
+        ],
+        ])
+        sent_message = await clients["bot"].send_photo(
+            message.chat.id, thumb, play_styles[int(gvarstatus(OWNER_ID, "format") or 11)].format(lightyagami(mode),
+f"[{lightyagami(title)}](https://t.me/{clients["bot"].me.username}?start=vidid_{extract_video_id(youtube_link)})" if not os.path.exists(youtube_link) else lightyagami(title), duration, by.mention()),
+            reply_markup=keyboard        )
+        asyncio.create_task(autoleave_vc(sent_message, duration,chat))
+        asyncio.create_task(update_progress_button(sent_message, duration,chat))
+        try:
+            await message.delete()
+        except Exception as e:
+            logger.info(e)
+    except NoActiveGroupCall:
+        await clients["bot"].send_message(chat.id, "ERROR: No active group calls")
+        return await remove_active_chat(message.chat.id)
+    except GroupcallForbidden:
+        await clients["bot"].send_message(chat.id, "ERROR: Telegram internal server error")
+        return await remove_active_chat( message.chat.id)
+    except Exception as e:
+        await clients["bot"].send_message(chat.id, f"ERROR: {e}")
+        return await remove_active_chat(message.chat.id)
+
+
+
+
+
+
+
+
+from functools import wraps
+from typing import Tuple, Optional
+
+# Example usage:
+async def is_active_chat(chat_id):
+    if chat_id not in active:
+        return False
+    else:
+        return True
+
+
+def get_user_data(user_id, key):
+    user_data = user_sessions.find_one({"user_id": user_id})
+    if user_data and key in user_data:
+        return user_data[key]
+    return None
+
+def gvarstatus(user_id, key):
+    return get_user_data(user_id, key)
+
+
+
+
+PLANS = {
+    "standard": {"amount": 6900, "duration": 20, "merit": 0},   # ₹69 for 20 days
+    "pro": {"amount": 17900, "duration": 60, "merit": 2}        # ₹180 for 60 days
+    }
