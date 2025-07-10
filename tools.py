@@ -452,9 +452,7 @@ async def autoleave_vc(message, duration_str,chat):
                     await remove_active_chat(chat.id)
                     await clients["bot"].send_message(
                         message.chat.id,
-                        "Anu ✘ OTAKU Beats
-😒 Hmph... no one even wants to listen to me?
-Fine! I’m leaving the VC! 😤."
+                        "Anu ✘ OTAKU Beats 😒 Hmph... no one even wants to listen to me? Fine! I’m leaving the VC! 😤."
                     ) ab
                     await remove_active_chat(chat.id)
                     break
