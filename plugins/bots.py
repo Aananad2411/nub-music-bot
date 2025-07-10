@@ -1108,7 +1108,7 @@ async def user_client_start_handler(client, message):
     session_name = f'user_{client.me.id}'
     user_dir = f"{ggg}/{session_name}"
     os.makedirs(user_dir, exist_ok=True)
-    editing = await message.reply("⚡")
+    editing = await message.reply("🦋")
     owner = await client.get_users(OWNER_ID)
     ow_id = owner.id if owner.username else None
 
@@ -1802,7 +1802,7 @@ async def play_handler_func(client, message):
     # Check queue for the target chat
     current_queue = len(queues.get(target_chat_id, [])) if queues else 0  
 
-    massage = await message.reply("⚡")
+    massage = await message.reply("🦋")
     
     # Set target chat as active based on channel mode or not
     is_active = await is_active_chat(client, target_chat_id)
@@ -3341,11 +3341,9 @@ async def pingme(client, message):
     # Fun emoji animations for loading
     loading_emojis = ["🕐", "🕑", "🕒", "🕓", "🕔", "🕕", "🕖", "🕗", "🕘", "🕙", "🕚", "🕛"]
     ping_frames = [
-        "█▒▒▒▒▒▒▒▒▒▒ 10%",
-        "███▒▒▒▒▒▒▒ 30%",
+        "█▒▒▒▒▒▒▒▒▒▒ 10%"
         "█████▒▒▒▒▒ 50%",
         "███████▒▒▒ 70%",
-        "█████████▒ 90%",
         "██████████ 100%"
     ]
 
@@ -3745,7 +3743,7 @@ async def kang(client, message):
         ):
             emoji_ = None
         if not emoji_:
-            emoji_ = "✨"
+            emoji_ = "🦋"
 
         u_name = user.username
         u_name = "@" + u_name if u_name else user.first_name or user.id
@@ -4124,22 +4122,34 @@ async def set_welcome_handler(client, message):
             welcome_text = gvarstatus(sender_id, "WELCOME") or f"""
 🎵 **{client.me.mention()}** 🎵
 ⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
-🎧 **Yᴏᴜʀ ᴍᴜꜱɪᴄᴀʟ ᴊᴏᴜʀɴᴇʏ ʙᴇɢɪɴꜱ ʜᴇʀᴇ**
-🔧 **SYSTEM STATUS**
-• **Uᴘᴛɪᴍᴇ** » `{uptime}`
-• **CPU ᴄᴏʀᴇꜱ** » `{cpu_cores}`
-• **RAM** » `{ram_total}`
-• **Dɪꜱᴋ** » `{disk_total}`
+🎧 **𝗬𝗼𝘂𝗿 𝗠𝘂𝘀𝗶𝗰𝗮𝗹 𝗝𝗼𝘂𝗿𝗻𝗲𝘆 𝗕𝗲𝗴𝗶𝗻𝘀 𝗛𝗲𝗿𝗲** 🎶  
+━━━━━━━━━━━━━━━━━━━━━━━
 
-✨ **Pʀᴇᴍɪᴜᴍ Fᴇᴀᴛᴜʀᴇꜱ**
-**• 8D ꜱᴜʀʀᴏᴜɴᴅ ꜱᴏᴜɴᴅ + ʜɪ-ꜰɪ**
-**• 4K ᴜʟᴛʀᴀ HD ꜱᴛʀᴇᴀᴍɪɴɢ**
-**• 0.1ꜱ ʀᴇꜱᴘᴏɴꜱᴇ ᴛɪᴍᴇ**
-**• 20+ ꜱᴍᴀʀᴛ ᴄᴏɴᴛʀᴏʟꜱ**
+🔧 **𝗦𝗬𝗦𝗧𝗘𝗠 𝗦𝗧𝗔𝗧𝗨𝗦**
 
-⚙️ **Pᴇʀꜰᴏʀᴍᴀɴᴄᴇ**
-**• 24/7 ɴᴏɴꜱᴛᴏᴘ ᴘʟᴀʏʙᴀᴄᴋ**
-**• 99.9% ᴜᴘᴛɪᴍᴇ ɢᴜᴀʀᴀɴᴛᴇᴇ**"""
+⏳ • **Uptime**        » `{uptime}`  
+⚙️ • **CPU Cores**    » `{cpu_cores}`  
+🧠 • **RAM**          » `{ram_total}`  
+💾 • **Disk**         » `{disk_total}`
+
+━━━━━━━━━━━━━━━━━━━━━━━
+
+✨ **𝗣𝗥𝗘𝗠𝗜𝗨𝗠 𝗙𝗘𝗔𝗧𝗨𝗥𝗘𝗦**
+
+🎧 • **8D Surround Sound** + Hi-Fi Boost  
+📺 • **4K Ultra HD Streaming**  
+⚡ • **0.1s Lightning-fast Response Time**  
+🤖 • **20+ Smart Controls & Filters**
+
+━━━━━━━━━━━━━━━━━━━━━━━
+
+⚙️ **𝗣𝗘𝗥𝗙𝗢𝗥𝗠𝗔𝗡𝗖𝗘**
+
+🔁 • **24/7 Nonstop Playback**  
+🛡️ • **99.9% Uptime Guarantee**
+
+━━━━━━━━━━━━━━━━━━━━━━━  
+🎼 *Powered by* **𝐀𝐍𝐔 ✘ 𝐒𝐲𝐬𝐭𝐞𝐦𝐬**"""
             if alive_logo.endswith(".mp4"):
                 await client.send_video(
                     message.chat.id,
