@@ -1228,182 +1228,183 @@ async def commands_handler(client, callback_query):
     # Define command categories with detailed descriptions
     playback_commands = """**PLAYBACK COMMANDS**
 <blockquote>
-**◾ /play or /vplay**
+"**/play or /vplay**"
 - Play audio or video from YouTube
 - Usage: `/play [song name or URL]`
 - Can also reply to audio/video file or YouTube link
 - `/vplay` streams video with audio
 - Adds to queue if something is already playing
 
-**◾ /playforce or /vplayforce**
+"** /playforce or /vplayforce**"
 - Force play (interrupts current playback)
 - Usage: `/playforce [query]` or reply to media
 - Immediately stops current track and plays new one
 
-**◾ /cplay or /cvplay**
+"** /cplay or /cvplay**"
 - Play in linked channel (requires group-channel link)
 - Usage: `/cplay [query]` or reply to media
 - Only works in groups with linked broadcast channel
 
-**◾ /pause**
+"** /pause**"
 - Pause current playback
 - Usage: `/pause`
 
-**◾ /resume**
+"** /resume**"
 - Resume paused playback
 - Usage: `/resume`
 
-**◾ /skip**
+"** /skip**"
 - Skip to next track in queue
 - Usage: `/skip`
 - If queue is empty, stops playback
 
-**◾ /end**
+"** /end**"
 - Stop playback and clear queue
 - Usage: `/end`
 
-**◾ /seek or /seekback**
+"** /seek or /seekback**"
 - Jump forward/backward in track
 - Usage: `/seek 30` or `/seekback 15`
 
-**◾ /loop**
+"** /loop**"
 - Loop current track X times
 - Usage: `/loop 3` (loops 3 times)
 - Maximum 20 loops
 </blockquote>
 """
 
-    blocklist_commands = """**🚫 BLOCKLIST COMMANDS**
+    blocklist_commands = """** BLOCKLIST COMMANDS**
 <blockquote>
-**◾ /block**
+** /block**
 - Block user from using bot
 - Usage: `/block @spammer` or reply to a user
 - Owner/sudo-only command
 
-**◾ /unblock**
+** /unblock**
 - Unblock user
 - Usage: `/unblock @username` or reply to a user
 - Owner/sudo-only command
 
-**◾ /blocklist**
+** /blocklist**
 - View all blocked users
 - Usage: `/blocklist`
 </blockquote>
 """
 
-    sudo_commands = """**🔑 SUDO COMMANDS**
+    sudo_commands = """** SUDO COMMANDS**
 <blockquote>
-**◾ /addsudo**
+**◾
+/addsudo**
 - Add sudo user
 - Usage: `/addsudo @username` or reply to a user
 - Owner-only command
 - Grants user admin privileges for the bot
 
-**◾ /rmsudo**
+** /rmsudo**
 - Remove sudo user
 - Usage: `/rmsudo @username` or reply to a user
 - Owner-only command
 - Revokes sudo privileges from user
 
-**◾ /sudolist**
+** /sudolist**
 - List all sudo users
 - Usage: `/sudolist`
 </blockquote>
 """
 
-    broadcast_commands = """**📢 BROADCAST COMMANDS**
+    broadcast_commands = """** BROADCAST COMMANDS**
 <blockquote>
-**◾ /broadcast**
+** /broadcast**
 - Send message to all users
 - Usage: Reply to a message and type `/broadcast`
 - Sends copy of message to all users
 
-**◾ /fbroadcast**
-- Force broadcast message
+** /fbroadcast**
+- force broadcast message
 - Usage: Reply to a message and type `/fbroadcast`
 - Forwards original message to all users
 - Owner/sudo-only command
 </blockquote>
 """
 
-    auth_commands = """**🔐 AUTH COMMANDS**
+    auth_commands = """** AUTH COMMANDS**
 <blockquote>
-**◾ /auth**
+** /auth**
 - Authorize user to use bot
 - Usage: `/auth` (reply to user) or `/auth @username`
 - Allows non-admins to use bot commands
 - Admin-only command
 
-**◾ /unauth**
+** /unauth**
 - Remove user authorization
 - Usage: `/unauth` (reply to user) or `/unauth @username`
 - Revokes authorization from user
 - Admin-only command
 
-**◾ /authlist**
+** /authlist**
 - List authorized users
 - Usage: `/authlist`
 </blockquote>
 """
 
-    tools_commands = """**🛠️ TOOLS COMMANDS**
+    tools_commands = """** TOOLS COMMANDS**
 <blockquote>
-**◾ /del**
+** /del**
 - Delete replied message
 - Usage: Reply to a message and type `/del`
 - Requires admin or delete permissions
 
-**◾ /tagall**
+** /tagall**
 - Tag all group members
 - Usage: `/tagall [optional message]`
 - Admin-only command
 
-**◾ /cancel**
+** /cancel**
 - Cancel ongoing tag process
 - Usage: `/cancel`
 
-**◾ /powers**
+** /powers**
 - Check admin permissions
 - Usage: `/powers` (reply to user) or  `/powers`
 </blockquote>
 """
 
-    kang_commands = """**🎨 KANG COMMANDS**
+    kang_commands = """** KANG COMMANDS**
 <blockquote>
-**◾ /kang**
+** /kang**
 - Clone sticker/video/photo
 - Usage: Reply to image/video/sticker and type `/kang [emoji]`
 - Adds sticker to your custom sticker pack
 
-**◾ /qt**
+** /qt**
 - Create fake quote stickers
 - Usage: Reply to a message and type `/qt [fake text]`
 - Creates fake quote sticker of the user
 
-**◾ /mmf**
+** /mmf**
 - Write on images/stickers
 - Usage: Reply to an image/sticker and type `/mmf [text]`
 </blockquote>
 """
 
-    status_commands = """**📊 STATUS COMMANDS**
+    status_commands = """** STATUS COMMANDS**
 <blockquote>
-**◾ /arise**
+** /arise**
 - Check bot response time
 - Usage: `/arise`
 - Shows bot latency and uptime
 
-**◾ /about**
+** /about**
 - View user/chat information
 - Usage: `/about` (shows your info)
 - Reply to a user or `/about @username` (someone else's info)
 - `/about` in a group shows group info
 
-**◾ /stats**
+** /stats**
 - Bot statistics
 - Usage: `/stats`
 
-**◾ /ac**
+** /ac**
 - View active calls
 - Usage: `/ac`
 </blockquote>
@@ -1412,20 +1413,21 @@ async def commands_handler(client, callback_query):
     # Create category buttons for main commands page
     category_buttons = [
         [
-            InlineKeyboardButton("🎵 Pʟᴀʏʙᴀᴄᴋ", callback_data="commands_playback"),
-            InlineKeyboardButton("🔐 Aᴜᴛʜ", callback_data="commands_auth")
+            InlineKeyboardButton(" Pʟᴀʏʙᴀᴄᴋ", callback_data="commands_playback"),
+            InlineKeyboardButton(" Aᴜᴛʜ", callback_data="commands_auth")
+        ]
+
+        [
+            InlineKeyboardButton(" Tᴏᴏʟꜱ", callback_data="commands_tools"),
+            InlineKeyboardButton(" Kᴀɴɢ", callback_data="commands_kang")
+        ],
+         
+            InlineKeyboardButton(" Sᴛᴀᴛᴜꜱ", callback_data="commands_status"),
+            InlineKeyboardButton(" Bʟᴏᴄᴋʟɪꜱᴛ", callback_data="commands_blocklist")
         ],
         [
-            InlineKeyboardButton("🛠️ Tᴏᴏʟꜱ", callback_data="commands_tools"),
-            InlineKeyboardButton("🎨 Kᴀɴɢ", callback_data="commands_kang")
-        ],
-        [
-            InlineKeyboardButton("📊 Sᴛᴀᴛᴜꜱ", callback_data="commands_status"),
-            InlineKeyboardButton("🚫 Bʟᴏᴄᴋʟɪꜱᴛ", callback_data="commands_blocklist")
-        ],
-        [
-            InlineKeyboardButton("🔑 Sᴜᴅᴏ", callback_data="commands_sudo"),
-            InlineKeyboardButton("📢 Bʀᴏᴀᴅᴄᴀꜱᴛ", callback_data="commands_broadcast")
+            InlineKeyboardButton(" Sᴜᴅᴏ", callback_data="commands_sudo"),
+            InlineKeyboardButton(" Bʀᴏᴀᴅᴄᴀꜱᴛ", callback_data="commands_broadcast")
         ],
         [InlineKeyboardButton("Hᴏᴍᴇ", callback_data="commands_back")]
     ]
@@ -1439,7 +1441,7 @@ async def commands_handler(client, callback_query):
     if data == "all":
         # Show all command categories
         await callback_query.message.edit_caption(
-            caption="**📜 SELECT A COMMAND CATEGORY**",
+            caption="** SELECT A COMMAND CATEGORY**",
             reply_markup=InlineKeyboardMarkup(category_buttons)
         )
     elif data == "playback":
