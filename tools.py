@@ -452,7 +452,13 @@ async def autoleave_vc(message, duration_str,chat):
                     await remove_active_chat(chat.id)
                     await clients["bot"].send_message(
                         message.chat.id,
-                        "⚠️ Nᴏ ᴀᴄᴛɪᴠᴇ ʟɪsᴛᴇɴᴇʀs ᴅᴇᴛᴇᴄᴛᴇᴅ. Lᴇᴀᴠɪɴɢ ᴠᴏɪᴄᴇ ᴄʜᴀᴛ."
+                        "🌀『 Anu-Bot: Sharingan Sync Initiated 』🌀  
+⚠️ No chakra flow detected...  
+🧠 Calculated outcome: Abandon VC.  
+🎤 Disengaging with Copy Ninja precision...
+
+🕊️ "Forget the past... cherish your friends."  
+— Hatake Kakashi"
                     )
                     await remove_active_chat(chat.id)
                     break
