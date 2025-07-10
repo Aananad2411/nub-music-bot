@@ -1117,10 +1117,10 @@ async def user_client_start_handler(client, message):
    [InlineKeyboardButton("Hᴇʟᴘ & ᴄᴏᴍᴍᴀɴᴅꜱ", callback_data="commands_all")],
    [
        InlineKeyboardButton(
-           "Cʀᴇᴀᴛᴏʀ",
+           "Cʀᴇᴀᴛᴏʀ 🕊️",
            user_id=OWNER_ID
        ) if ow_id else InlineKeyboardButton(
-           "Cʀᴇᴀᴛᴏʀ",
+           "Cʀᴇᴀᴛᴏʀ 🕊️",
            url=f"https://t.me/NubDockerbot"
        ),
        InlineKeyboardButton("Sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ", url=gvarstatus(client.me.id, "support") or f"https://t.me/{GROUP}")
@@ -1184,15 +1184,6 @@ async def user_client_start_handler(client, message):
 • **RAM** » `{ram_total}`
 • **Dɪꜱᴋ** » `{disk_total}`
 
-✨ **Pʀᴇᴍɪᴜᴍ Fᴇᴀᴛᴜʀᴇꜱ**
-**• 8D ꜱᴜʀʀᴏᴜɴᴅ ꜱᴏᴜɴᴅ + ʜɪ-ꜰɪ**
-**• 4K ᴜʟᴛʀᴀ HD ꜱᴛʀᴇᴀᴍɪɴɢ**
-**• 0.1ꜱ ʀᴇꜱᴘᴏɴꜱᴇ ᴛɪᴍᴇ**
-**• 20+ ꜱᴍᴀʀᴛ ᴄᴏɴᴛʀᴏʟꜱ**
-
-⚙️ **Pᴇʀꜰᴏʀᴍᴀɴᴄᴇ**
-**• 24/7 ɴᴏɴꜱᴛᴏᴘ ᴘʟᴀʏʙᴀᴄᴋ**
-**• 99.9% ᴜᴘᴛɪᴍᴇ ɢᴜᴀʀᴀɴᴛᴇᴇ**"""
 
        send = client.send_video if alive_logo.endswith(".mp4") else client.send_photo
        await editing.delete()
@@ -1397,9 +1388,9 @@ async def commands_handler(client, callback_query):
 
     status_commands = """**📊 STATUS COMMANDS**
 <blockquote>
-**◾ /ping**
+**◾ /arise**
 - Check bot response time
-- Usage: `/ping`
+- Usage: `/arise`
 - Shows bot latency and uptime
 
 **◾ /about**
@@ -1512,7 +1503,7 @@ async def commands_handler(client, callback_query):
             [InlineKeyboardButton("Hᴇʟᴘ & ᴄᴏᴍᴍᴀɴᴅꜱ", callback_data="commands_all")],
             [
                 InlineKeyboardButton(
-                    "Cʀᴇᴀᴛᴏʀ",
+                    "Cʀᴇᴀᴛᴏʀ 🕊️",
                     user_id=OWNER_ID
                 ) if ow_id else InlineKeyboardButton(
                     "Cʀᴇᴀᴛᴏʀ",
@@ -1538,11 +1529,7 @@ async def commands_handler(client, callback_query):
 **• 8D ꜱᴜʀʀᴏᴜɴᴅ ꜱᴏᴜɴᴅ + ʜɪ-ꜰɪ**
 **• 4K ᴜʟᴛʀᴀ HD ꜱᴛʀᴇᴀᴍɪɴɢ**
 **• 0.1ꜱ ʀᴇꜱᴘᴏɴꜱᴇ ᴛɪᴍᴇ**
-**• 20+ ꜱᴍᴀʀᴛ ᴄᴏɴᴛʀᴏʟꜱ**
-
-⚙️ **Pᴇʀꜰᴏʀᴍᴀɴᴄᴇ**
-**• 24/7 ɴᴏɴꜱᴛᴏᴘ ᴘʟᴀʏʙᴀᴄᴋ**
-**• 99.9% ᴜᴘᴛɪᴍᴇ ɢᴜᴀʀᴀɴᴛᴇᴇ**"""
+**• 20+ ꜱᴍᴀʀᴛ ᴄᴏɴᴛʀᴏʟꜱ**"""
         await callback_query.message.edit_caption(
             caption=await format_welcome_message(
                 client, 
@@ -3391,7 +3378,67 @@ async def pingme(client, message):
 
 from pyrogram import Client, enums, filters
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
-import os
+importsync def pingme(client, message):
+    # Calculate uptime
+    from random import choice
+    uptime = await get_readable_time((time.time() - StartTime))
+    start = datetime.datetime.now()
+    owner = await client.get_users(OWNER_ID)
+    ow_id = owner.id if owner.username else None
+    # Fun emoji animations for loading
+    loading_emojis = ["🕐", "🕑", "🕒", "🕓", "🕔", "🕕", "🕖", "🕗", "🕘", "🕙", "🕚", "🕛"]
+    ping_frames = [
+        "█▒▒▒▒▒▒▒▒▒▒ 10%"
+        "█████▒▒▒▒▒ 50%",
+        "███████▒▒▒ 70%",
+        "██████████ 100%"
+    ]
+
+    # Animated loading sequence
+    msg = await message.reply_text("🏓 **Pinging...**")
+
+    for frame in ping_frames:
+        await msg.edit(f"```\n{frame}\n```{choice(loading_emojis)}")
+        await asyncio.sleep(0.3)  # Smooth animation delay
+
+    end = datetime.datetime.now()
+    ping_duration = (end - start).microseconds / 1000
+
+    # Status indicators based on ping speed
+    if ping_duration < 100:
+        status = "EXCELLENT 🟢"
+    elif ping_duration < 200:
+        status = "GOOD 🟡"
+    else:
+        status = "MODERATE 🔴"
+
+    # Fancy formatted response
+    response = f"""
+╭──────────────────
+│   PONG! 🏓
+├──────────────────
+│ ⌚ Speed: {ping_duration:.2f}ms
+│ 📊 Status: {status}
+│ ⏱️ Uptime: {uptime}
+│ 👑 Owner: {owner.mention()}
+╰──────────────────
+"""
+
+    # Add random motivational messages
+    quotes = [
+        "Blazing fast! ⚡",
+        "Speed demon! 🔥",
+        "Lightning quick! ⚡",
+        "Sonic boom! 💨"
+    ]
+
+    await msg.edit(
+        response + f"\n<b>{choice(quotes)}</b>"
+    )
+
+from pyrogram import Client, enums, filters
+from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
+import os os
 
 @Client.on_message(filters.command("about"))
 async def info_command(client: Client, message: Message):
