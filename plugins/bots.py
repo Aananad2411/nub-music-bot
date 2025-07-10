@@ -1226,7 +1226,7 @@ async def commands_handler(client, callback_query):
     ow_id = owner.id if owner.username else None
     
     # Define command categories with detailed descriptions
-    playback_commands = """**🎵 PLAYBACK COMMANDS**
+    playback_commands = """**PLAYBACK COMMANDS**
 <blockquote>
 **◾ /play or /vplay**
 - Play audio or video from YouTube
