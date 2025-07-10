@@ -3317,124 +3317,73 @@ async def handle_power_command(client, message):
 
 
 
-@Client.on_message(filters.command("ping"))
-async def pingme(client, message):
-    # Calculate uptime
-    from random import choice
-    uptime = await get_readable_time((time.time() - StartTime))
-    start = datetime.datetime.now()
-    owner = await client.get_users(OWNER_ID)
-    ow_id = owner.id if owner.username else None
-    # Fun emoji animations for loading
-    loading_emojis = ["🕐", "🕑", "🕒", "🕓", "🕔", "🕕", "🕖", "🕗", "🕘", "🕙", "🕚", "🕛"]
-    ping_frames = [
-        "█▒▒▒▒▒▒▒▒▒▒ 10%"
-        "█████▒▒▒▒▒ 50%",
-        "███████▒▒▒ 70%",
-        "██████████ 100%"
-    ]
 
     # Animated loading sequence
     msg = await message.reply_text("🏓 **Pinging...**")
+@Client.on_message(filters.command("arise"))
+async def arise(client: Client, message: Message):
+    # Uptime formatting
+    now = time.time()
+    uptime_seconds = now - StartTime
+    hours, remainder = divmod(int(uptime_seconds), 3600)
+    minutes, seconds = divmod(remainder, 60)
+    uptime = f"{hours}h:{minutes}m:{seconds}s"
 
-    for frame in ping_frames:
-        await msg.edit(f"```\n{frame}\n```{choice(loading_emojis)}")
-        await asyncio.sleep(0.3)  # Smooth animation delay
+    # Owner user
+    owner = await client.get_users(OWNER_ID)
+
+    # Animation setup
+    loading_emojis = ["🌙", "🌠", "🌌", "💫", "🪐", "⭐", "⚡", "✨"]
+    arise_frames = [
+        "🌙 Summoning celestial frequency...",
+        "🎼 Infusing soul with rhythm...",
+        "🌠 Syncing stars to vibration...",
+        "🦋 Awakening aura...",
+        "⚡ ARISE, ˹𝐀ɴᴜ ✘ 𝐌ᴜsɪᴄ˼ is live..."
+    ]
+
+    start = datetime.datetime.now()
+    msg = await message.reply_text("🔮 Arising...")
+
+    # Animate the arise sequence
+    for stage in arise_frames:
+        await msg.edit(f"`{stage}` {choice(loading_emojis)}")
+        await asyncio.sleep(0.4)
 
     end = datetime.datetime.now()
     ping_duration = (end - start).microseconds / 1000
 
-    # Status indicators based on ping speed
+    # Status badge
     if ping_duration < 100:
-        status = "EXCELLENT 🟢"
+        status = "LEGENDARY 💠"
     elif ping_duration < 200:
-        status = "GOOD 🟡"
+        status = "STABLE 🪷"
+    elif ping_duration < 400:
+        status = "MODERATE 🔶"
     else:
-        status = "MODERATE 🔴"
+        status = "CRITICAL ☠️"
 
-    # Fancy formatted response
+    # Final elegant box
     response = f"""
-╭──────────────────
-│   PONG! 🏓
-├──────────────────
-│ ⌚ Speed: {ping_duration:.2f}ms
-│ 📊 Status: {status}
-│ ⏱️ Uptime: {uptime}
-│ 👑 Owner: {owner.mention()}
-╰──────────────────
+╭────────────────────────
+│   𝗔𝗥𝗜𝗦𝗘  — ˹𝐀ɴᴜ ✘ 𝐌ᴜsɪᴄ˼
+├────────────────────────
+│ 🌀 Speed   : {ping_duration:.2f} ms
+│ 🌡️ Status  : {status}
+│ ⏳ Uptime  : {uptime}
+│ 🧿 Owner   : {owner.mention}
+╰────────────────────────
 """
 
-    # Add random motivational messages
+    # Aesthetic outro messages
     quotes = [
-        "Blazing fast! ⚡",
-        "Speed demon! 🔥",
-        "Lightning quick! ⚡",
-        "Sonic boom! 💨"
+        "Harmony synced. 🎶",
+        "Divine vibes online. 🦋",
+        "Peace awakened. 🪽",
+        "Soul frequency active. 🌌"
     ]
 
-    await msg.edit(
-        response + f"\n<b>{choice(quotes)}</b>"
-    )
-
-from pyrogram import Client, enums, filters
-from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
-importsync def pingme(client, message):
-    # Calculate uptime
-    from random import choice
-    uptime = await get_readable_time((time.time() - StartTime))
-    start = datetime.datetime.now()
-    owner = await client.get_users(OWNER_ID)
-    ow_id = owner.id if owner.username else None
-    # Fun emoji animations for loading
-    loading_emojis = ["🕐", "🕑", "🕒", "🕓", "🕔", "🕕", "🕖", "🕗", "🕘", "🕙", "🕚", "🕛"]
-    ping_frames = [
-        "█▒▒▒▒▒▒▒▒▒▒ 10%"
-        "█████▒▒▒▒▒ 50%",
-        "███████▒▒▒ 70%",
-        "██████████ 100%"
-    ]
-
-    # Animated loading sequence
-    msg = await message.reply_text("🏓 **Pinging...**")
-
-    for frame in ping_frames:
-        await msg.edit(f"```\n{frame}\n```{choice(loading_emojis)}")
-        await asyncio.sleep(0.3)  # Smooth animation delay
-
-    end = datetime.datetime.now()
-    ping_duration = (end - start).microseconds / 1000
-
-    # Status indicators based on ping speed
-    if ping_duration < 100:
-        status = "EXCELLENT 🟢"
-    elif ping_duration < 200:
-        status = "GOOD 🟡"
-    else:
-        status = "MODERATE 🔴"
-
-    # Fancy formatted response
-    response = f"""
-╭──────────────────
-│   PONG! 🏓
-├──────────────────
-│ ⌚ Speed: {ping_duration:.2f}ms
-│ 📊 Status: {status}
-│ ⏱️ Uptime: {uptime}
-│ 👑 Owner: {owner.mention()}
-╰──────────────────
-"""
-
-    # Add random motivational messages
-    quotes = [
-        "Blazing fast! ⚡",
-        "Speed demon! 🔥",
-        "Lightning quick! ⚡",
-        "Sonic boom! 💨"
-    ]
-
-    await msg.edit(
-        response + f"\n<b>{choice(quotes)}</b>"
-    )
+    await msg.edit(response + f"\n<b>{choice(quotes)}</b>")
 
 from pyrogram import Client, enums, filters
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
