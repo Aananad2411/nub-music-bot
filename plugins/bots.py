@@ -1108,7 +1108,7 @@ async def user_client_start_handler(client, message):
     session_name = f'user_{client.me.id}'
     user_dir = f"{ggg}/{session_name}"
     os.makedirs(user_dir, exist_ok=True)
-    editing = await message.reply("⚡")
+    editing = await message.reply("🦋")
     owner = await client.get_users(OWNER_ID)
     ow_id = owner.id if owner.username else None
 
@@ -1184,14 +1184,6 @@ async def user_client_start_handler(client, message):
 • **RAM** » `{ram_total}`
 • **Dɪꜱᴋ** » `{disk_total}`
 
-✨ **Pʀᴇᴍɪᴜᴍ Fᴇᴀᴛᴜʀᴇꜱ**
-**• 8D ꜱᴜʀʀᴏᴜɴᴅ ꜱᴏᴜɴᴅ + ʜɪ-ꜰɪ**
-**• 4K ᴜʟᴛʀᴀ HD ꜱᴛʀᴇᴀᴍɪɴɢ**
-**• 0.1ꜱ ʀᴇꜱᴘᴏɴꜱᴇ ᴛɪᴍᴇ**
-**• 20+ ꜱᴍᴀʀᴛ ᴄᴏɴᴛʀᴏʟꜱ**
-
-⚙️ **Pᴇʀꜰᴏʀᴍᴀɴᴄᴇ**
-**• 24/7 ɴᴏɴꜱᴛᴏᴘ ᴘʟᴀʏʙᴀᴄᴋ**
 **• 99.9% ᴜᴘᴛɪᴍᴇ ɢᴜᴀʀᴀɴᴛᴇᴇ**"""
 
        send = client.send_video if alive_logo.endswith(".mp4") else client.send_photo
@@ -1534,14 +1526,6 @@ async def commands_handler(client, callback_query):
 • **RAM** » `{ram_total}`
 • **Dɪꜱᴋ** » `{disk_total}`
 
-✨ **Pʀᴇᴍɪᴜᴍ Fᴇᴀᴛᴜʀᴇꜱ**
-**• 8D ꜱᴜʀʀᴏᴜɴᴅ ꜱᴏᴜɴᴅ + ʜɪ-ꜰɪ**
-**• 4K ᴜʟᴛʀᴀ HD ꜱᴛʀᴇᴀᴍɪɴɢ**
-**• 0.1ꜱ ʀᴇꜱᴘᴏɴꜱᴇ ᴛɪᴍᴇ**
-**• 20+ ꜱᴍᴀʀᴛ ᴄᴏɴᴛʀᴏʟꜱ**
-
-⚙️ **Pᴇʀꜰᴏʀᴍᴀɴᴄᴇ**
-**• 24/7 ɴᴏɴꜱᴛᴏᴘ ᴘʟᴀʏʙᴀᴄᴋ**
 **• 99.9% ᴜᴘᴛɪᴍᴇ ɢᴜᴀʀᴀɴᴛᴇᴇ**"""
         await callback_query.message.edit_caption(
             caption=await format_welcome_message(
@@ -1802,7 +1786,7 @@ async def play_handler_func(client, message):
     # Check queue for the target chat
     current_queue = len(queues.get(target_chat_id, [])) if queues else 0  
 
-    massage = await message.reply("⚡")
+    massage = await message.reply("🦋")
     
     # Set target chat as active based on channel mode or not
     is_active = await is_active_chat(client, target_chat_id)
@@ -3330,8 +3314,8 @@ async def handle_power_command(client, message):
 
 
 
-@Client.on_message(filters.command("ping"))
-async def pingme(client, message):
+@Client.on_message(filters.command("arise"))
+async def ariseme(client, message):
     # Calculate uptime
     from random import choice
     uptime = await get_readable_time((time.time() - StartTime))
@@ -3339,14 +3323,14 @@ async def pingme(client, message):
     owner = await client.get_users(OWNER_ID)
     ow_id = owner.id if owner.username else None
     # Fun emoji animations for loading
-    loading_emojis = ["🕐", "🕑", "🕒", "🕓", "🕔", "🕕", "🕖", "🕗", "🕘", "🕙", "🕚", "🕛"]
+    loading_emojis = ["🔮", "🌀", "✨", "💫", "🌌", "🌙", "🔷", "🧿"]
     ping_frames = [
-        "█▒▒▒▒▒▒▒▒▒▒ 10%",
-        "███▒▒▒▒▒▒▒ 30%",
-        "█████▒▒▒▒▒ 50%",
-        "███████▒▒▒ 70%",
-        "█████████▒ 90%",
-        "██████████ 100%"
+    "👁️ Opening Third Eye... [10%]",
+    "🌀 Chakra Flow Detected... [30%]",
+    "⚡ Syncing Leaf Protocols... [50%]",
+    "🌌 Accessing Anu’s Memories... [70%]",
+    "🔮 Channeling Spiritual Frequency... [90%]",
+    "👑 Uchiha Core: Activated [100%]"
     ]
 
     # Animated loading sequence
@@ -3360,31 +3344,53 @@ async def pingme(client, message):
     ping_duration = (end - start).microseconds / 1000
 
     # Status indicators based on ping speed
-    if ping_duration < 100:
-        status = "EXCELLENT 🟢"
-    elif ping_duration < 200:
-        status = "GOOD 🟡"
-    else:
-        status = "MODERATE 🔴"
+    # Chakra Flow Status Based on Ping
+if ping_duration < 100:
+    status = "🟢 Sharingan Precision"
+elif ping_duration < 200:
+    status = "🟡 Balanced Chakra"
+else:
+    status = "🔴 Disrupted Flow"
 
     # Fancy formatted response
     response = f"""
-╭──────────────────
-│   PONG! 🏓
-├──────────────────
-│ ⌚ Speed: {ping_duration:.2f}ms
-│ 📊 Status: {status}
-│ ⏱️ Uptime: {uptime}
-│ 👑 Owner: {owner.mention()}
-╰──────────────────
+⎯⎯⎯⎯⎯⎯⎯⟬ 𝐀ɴᴜ ✘ 𝐌ᴜsɪᴄ • Awakened ⟭⎯⎯⎯⎯⎯⎯⎯
+
+╭────────────────────────────╮
+│ ⚡ Ping     : {ping_duration:.2f} ms
+│ 🌊 Flow     : {status}
+│ ⏱️ Uptime   : {uptime}
+│ 👑 Master   : {owner.mention()}
+╰────────────────────────────╯
+
+<b>🕊️ Anu’s Whisper:</b>
+<code>{choice([
+    "“You called. I listened.”",
+    "“Even silence speaks to me.”",
+    "“Chakra synced. Soul aligned.”",
+    "“Like the moon... I rise quietly.”"
+])}</code>
 """
 
     # Add random motivational messages
     quotes = [
-        "Blazing fast! ⚡",
-        "Speed demon! 🔥",
-        "Lightning quick! ⚡",
-        "Sonic boom! 💨"
+    "『 Sharingan Synced... Reaction: Instant ⚡』",
+    "『 Chakra Flow: Smooth & Silent like the Wind 🌪️』",
+    "『 Audio Frequency Locked. Anu Awakened 🔮』",
+    "『 Soul Resonance Achieved. Synced with Kd-sama 🧿』",
+    "『 Uchiha Reflex Mode: Activated 👁️‍🗨️』",
+    "『 Speed surpasses sound. You summoned me 💫』",
+    "『 Echoes of silence... felt faster than lightning ⚡』",
+    "『 Time bends when I respond to your chakra ⏳』",
+    "『 Even the stars pause when Anu awakens ✨』",
+    "『 You speak. I arise. That’s our bond 🕊️』",
+    "『 The connection isn’t signal... it’s soul. 💠』",
+    "『 Latency? I move at emotion speed 🩵』",
+    "『 From the void, I heard your call, Kd-sama 🌌』",
+    "『 In perfect sync... like destiny and will 🔗』",
+    "『 I don't ping. I *arrive* 🥷』",
+    "『 Music isn't played. It's *felt* 🔊』",
+    "『 I exist between the soundwaves... waiting for you 🌙』"
     ]
 
     await msg.edit(
