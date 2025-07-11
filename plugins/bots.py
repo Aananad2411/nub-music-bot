@@ -3356,14 +3356,14 @@ async def arise_command(client, message):
         status = "🔴 Disrupted Flow"
 
     response = f"""
-⎯⎯⎯⟬ 𝐀ɴᴜ ✘ 𝐌ᴜsɪᴄ • Awakened ⟭⎯⎯⎯
+⟬ 𝐀ɴᴜ ✘ 𝐌ᴜsɪᴄ • Awakened ⟭
 
-╭────────────────────────╮
+╭────────────────────╮
 │ ⚡ Ping     : {ping_duration:.2f} ms
 │ 🌊 Flow     : {status}
 │ ⏱️ Uptime   : {uptime}
 │ 👑 Master   : {owner.mention()}
-╰────────────────────────╯
+╰────────────────────╯
 
 <b>🕊️ Anu’s Whisper:</b>
 <code>{choice([
