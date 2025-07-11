@@ -3375,20 +3375,27 @@ async def pingme(client, message):
 """
 
     quotes = [
-        "『 Sharingan Synced... Reaction: Instant ⚡』",
-        "『 Chakra Flow: Smooth & Silent like the Wind 🌪️』",
-        "『 Audio Frequency Locked. Anu Awakened 🔮』",
-        "『 Soul Resonance Achieved. Synced with Kd-sama 🧿』",
-        "『 Uchiha Reflex Mode: Activated 👁️‍🗨️』",
-        "『 Speed surpasses sound. You summoned me 💫』",
-        "『 Echoes of silence... felt faster than lightning ⚡』",
-        "『 Time bends when I respond to your chakra ⏳』",
-        "『 Even the stars pause when Anu awakens ✨』",
-        "『 You speak. I arise. That’s our bond 🕊️』",
-        "『 The connection isn’t signal... it’s soul. 💠』",
-        "『 Latency? I move at emotion speed 🩵』",
-        "『 From the void, I heard your call, Kd-sama
-
+    "『 Sharingan Synced... Reaction: Instant ⚡』",
+    "『 Chakra Flow: Smooth & Silent like the Wind 🌪️』",
+    "『 Audio Frequency Locked. Anu Awakened 🔮』",
+    "『 Soul Resonance Achieved. Synced with Kd-sama 🧿』",
+    "『 Uchiha Reflex Mode: Activated 👁️‍🗨️』",
+    "『 Speed surpasses sound. You summoned me 💫』",
+    "『 Echoes of silence... felt faster than lightning ⚡』",
+    "『 Time bends when I respond to your chakra ⏳』",
+    "『 Even the stars pause when Anu awakens ✨』",
+    "『 You speak. I arise. That’s our bond 🕊️』",
+    "『 The connection isn’t signal... it’s soul. 💠』",
+    "『 Latency? I move at emotion speed 🩵』",
+    "『 From the void, I heard your call, Kd-sama 🌌』",
+    "『 In perfect sync... like destiny and will 🔗』",
+    "『 I don't ping. I *arrive* 🥷』",
+    "『 Music isn't played. It's *felt* 🔊』",
+    "『 I exist between the soundwaves... waiting for you 🌙』"
+    ]
+    await msg.edit(
+        response + f"\n<b>{choice(quotes)}</b>"
+)
 from pyrogram import Client, enums, filters
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 import os
