@@ -3314,8 +3314,8 @@ async def handle_power_command(client, message):
 
 
 
-@Client.on_message(filters.command("arise"))
-async def ariseme(client, message):
+@Client.on_message(filters.command("ping"))
+async def pingme(client, message):
     # Calculate uptime
     from random import choice
     uptime = await get_readable_time((time.time() - StartTime))
