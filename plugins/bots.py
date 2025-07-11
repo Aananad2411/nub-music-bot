@@ -3323,15 +3323,15 @@ StartTime = time.time()  # 🔁 Replace with your actual Telegram user ID
 async def get_readable_time(seconds: int) -> str:
     return str(datetime.timedelta(seconds=int(seconds)))
 
-@Client.on_message(filters.command("ping"))
-async def pingme(client, message):
+@Client.on_message(filters.command("arise"))
+async def arise_command(client, message):
     uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.datetime.now()
     owner = await client.get_users(OWNER_ID)
 
     # Loading emojis and animation frames
     loading_emojis = ["🔮", "🌀", "✨", "💫", "🌌", "🌙", "🔷", "🧿"]
-    ping_frames = [
+    awaken_frames = [
         "👁️ Opening Third Eye... [10%]",
         "🌀 Chakra Flow Detected... [30%]",
         "⚡ Syncing Leaf Protocols... [50%]",
@@ -3340,8 +3340,8 @@ async def pingme(client, message):
         "👑 Uchiha Core: Activated [100%]"
     ]
 
-    msg = await message.reply_text("🏓 **Pinging...**")
-    for frame in ping_frames:
+    msg = await message.reply_text("🏓 **Ariseing...**")
+    for frame in awaken_frames:
         await msg.edit(f"```\n{frame}\n```{choice(loading_emojis)}")
         await asyncio.sleep(0.3)
 
