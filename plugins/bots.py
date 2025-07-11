@@ -3314,16 +3314,22 @@ async def handle_power_command(client, message):
 
 
 
-    @Client.on_message(filters.command("ping"))
+from pyrogram import Client, filters
+from random import choice
+import asyncio, datetime, time
+
+StartTime = time.time()  # 🔁 Replace with your actual Telegram user ID
+
+async def get_readable_time(seconds: int) -> str:
+    return str(datetime.timedelta(seconds=int(seconds)))
+
+@Client.on_message(filters.command("ping"))
 async def pingme(client, message):
-    import asyncio, datetime, time
-    from random import choice
     uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.datetime.now()
     owner = await client.get_users(OWNER_ID)
-    ow_id = owner.id if owner.username else None
 
-    # Fun emoji animations for loading
+    # Loading emojis and animation frames
     loading_emojis = ["🔮", "🌀", "✨", "💫", "🌌", "🌙", "🔷", "🧿"]
     ping_frames = [
         "👁️ Opening Third Eye... [10%]",
@@ -3334,16 +3340,14 @@ async def pingme(client, message):
         "👑 Uchiha Core: Activated [100%]"
     ]
 
-    # Animated loading sequence
     msg = await message.reply_text("🏓 **Pinging...**")
     for frame in ping_frames:
         await msg.edit(f"```\n{frame}\n```{choice(loading_emojis)}")
-        await asyncio.sleep(0.3)  # Smooth animation delay
+        await asyncio.sleep(0.3)
 
     end = datetime.datetime.now()
     ping_duration = (end - start).microseconds / 1000
 
-    # Chakra Flow Status Based on Ping
     if ping_duration < 100:
         status = "🟢 Sharingan Precision"
     elif ping_duration < 200:
@@ -3351,7 +3355,6 @@ async def pingme(client, message):
     else:
         status = "🔴 Disrupted Flow"
 
-    # Fancy formatted response
     response = f"""
 ⎯⎯⎯⎯⎯⎯⎯⟬ 𝐀ɴᴜ ✘ 𝐌ᴜsɪᴄ • Awakened ⟭⎯⎯⎯⎯⎯⎯⎯
 
@@ -3371,7 +3374,6 @@ async def pingme(client, message):
 ])}</code>
 """
 
-    # Add random motivational messages
     quotes = [
         "『 Sharingan Synced... Reaction: Instant ⚡』",
         "『 Chakra Flow: Smooth & Silent like the Wind 🌪️』",
@@ -3385,16 +3387,7 @@ async def pingme(client, message):
         "『 You speak. I arise. That’s our bond 🕊️』",
         "『 The connection isn’t signal... it’s soul. 💠』",
         "『 Latency? I move at emotion speed 🩵』",
-        "『 From the void, I heard your call, Kd-sama 🌌』",
-        "『 In perfect sync... like destiny and will 🔗』",
-        "『 I don't ping. I *arrive* 🥷』",
-        "『 Music isn't played. It's *felt* 🔊』",
-        "『 I exist between the soundwaves... waiting for you 🌙』"
-    ]
-
-    await msg.edit(
-        response + f"\n<b>{choice(quotes)}</b>"
-    )
+        "『 From the void, I heard your call, Kd-sama
 
 from pyrogram import Client, enums, filters
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
