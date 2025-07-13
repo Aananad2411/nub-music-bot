@@ -270,6 +270,74 @@ async def mentionall(client, message):
     except:
         pass
 
+afk_db = mongo_client["AnuBot"]["afk_status"]
+@Client.on_message(filters.command("afk"))
+async def set_afk(client, message):
+    user = message.from_user
+    reason = " ".join(message.command[1:]) if len(message.command) > 1 else "I'm away right now."
+    
+    afk_db.update_one(
+        {"user_id": user.id},
+        {"$set": {"reason": reason, "since": time.time()}},
+        upsert=True
+    )
+
+    await message.reply(
+        f"🔕 <b>{user.first_name}</b> is now AFK\n📌 <b>Reason:</b> {reason}",
+        reply_markup=InlineKeyboardMarkup(
+            [[InlineKeyboardButton("💤 AFK Activated", callback_data="noop")]]
+        )
+    )
+@Client.on_message(filters.group & filters.text)
+async def check_afk_mentions(client, message):
+    if not message.entities:
+        return
+
+    mentioned_ids = set()
+
+    for entity in message.entities:
+        if entity.type == MessageEntityType.MENTION:
+            username = message.text[entity.offset:entity.offset + entity.length].lstrip("@")
+            try:
+                user = await client.get_users(username)
+                mentioned_ids.add(user.id)
+            except:
+                pass
+        elif entity.type == MessageEntityType.TEXT_MENTION and entity.user:
+            mentioned_ids.add(entity.user.id)
+
+    for uid in mentioned_ids:
+        afk = afk_db.find_one({"user_id": uid})
+        if afk:
+            since = int(time.time() - afk["since"])
+            mins, secs = divmod(since, 60)
+            hrs, mins = divmod(mins, 60)
+            time_str = f"{hrs}h {mins}m {secs}s" if hrs else f"{mins}m {secs}s"
+            await message.reply(
+                f"📣 <b>User is AFK</b>\n"
+                f"📌 <b>Reason:</b> {afk['reason']}\n"
+                f"⏱️ <b>Since:</b> {time_str}",
+                reply_to_message_id=message.id
+            )
+@Client.on_message(filters.private | filters.group)
+async def remove_afk_if_active(client, message):
+    user = message.from_user
+    if not user:
+        return
+
+    afk = afk_db.find_one({"user_id": user.id})
+    if afk:
+        afk_db.delete_one({"user_id": user.id})
+        await message.reply(
+            f"🔔 <b>Welcome back, {user.first_name}!</b>\n"
+            f"Your AFK status has been removed.",
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton("✅ AFK Removed", callback_data="noop")]]
+            )
+        )
+@Client.on_callback_query(filters.regex("noop"))
+async def ignore_noop(client, callback_query):
+    await callback_query.answer("😴 Just a status indicator", show_alert=False)
 
 @Client.on_message(filters.command(["seek", "seekback"]))
 @admin_only()
