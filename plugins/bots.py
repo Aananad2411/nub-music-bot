@@ -1212,7 +1212,6 @@ async def commands_handler(client, callback_query):
 
     # ---------- Command pages (text blocks) ----------
     playback_commands = """**🎵 PLAYBACK COMMANDS**
-<bloplayback_commands = """**🎵 PLAYBACK COMMANDS**
 <blockquote>
 🎧 Control your music playback smoothly using the commands below:
 
