@@ -1166,26 +1166,17 @@ async def user_client_start_handler(client, message):
 
 
 
-       greet_message = gvarstatus(client.me.id, "WELCOME") or """
-🌟 𝖂𝖊𝖑𝖈𝖔𝖒𝖊, {name}! 🌟
+       greet_message = gvarstatus(client.me.id, "WELCOME") or f"""
+🦋 Hello {name}, welcome to {botname}!
 
-🎶 Your **musical journey** begins with {botname}!
+🎶 Your musical companion is here to turn silence into melody and moments into memories.
 
-✨ Enjoy _crystal-clear_ audio and a vast library of sounds.
+💫 With crystal-clear sound, fast streaming, and an easy-to-use interface, {botname} is built to make every song feel special.
 
-🚀 Get ready for an *unparalleled* musical adventure!
+📀 Whether you're relaxing, working, or just vibing — your music, your mood, your way.
+
+✨ Thank you for choosing {botname}. Let’s begin your musical journey!
 """
-
-       send = client.send_video if alive_logo.endswith(".mp4") else client.send_photo
-       await editing.delete()
-       await send(
-                user_id ,
-                alive_logo,
-                caption=await format_welcome_message(client, greet_message, user_id, message.from_user.mention() if message.chat.type == enums.ChatType.PRIVATE else (message.chat.title or ""))
-,reply_markup=InlineKeyboardMarkup(buttons)
-            )
-    except Exception as e:
-      logger.info(e)
 
 # Create an instance of the Update class
 async def format_welcome_message(client, text, chat_id, user_or_chat_name):
@@ -1221,102 +1212,182 @@ async def commands_handler(client, callback_query):
 
     # ---------- Command pages (text blocks) ----------
     playback_commands = """**🎵 PLAYBACK COMMANDS**
+<bloplayback_commands = """**🎵 PLAYBACK COMMANDS**
 <blockquote>
-◾ /play  /vplay        – queue YouTube audio/video
-◾ /playforce /vplayforce – force play (skip current)
-◾ /cplay /cvplay       – play in linked channel
-◾ /pause               – pause stream
-◾ /resume              – resume stream
-◾ /skip  /cskip        – next track
-◾ /end  /cend          – stop & clear queue
-◾ /seek <sec>          – jump forward
-◾ /seekback <sec>      – jump backward
-◾ /loop <1-20>         – repeat current song
+🎧 Control your music playback smoothly using the commands below:
+
+◾ /play or /vplay  
+ – Queue a song or video from YouTube
+
+◾ /playforce or /vplayforce  
+ – Instantly play by skipping the current track
+
+◾ /cplay or /cvplay  
+ – Stream directly in the linked channel
+
+⏸️ /pause  ▶️ /resume  
+ – Pause or resume the current stream
+
+⏭️ /skip or /cskip  
+ – Skip to the next song in the queue
+
+🛑 /end or /cend  
+ – Stop playback and clear the queue
+
+⏩ /seek <seconds>  ⏪ /seekback <seconds>  
+ – Jump forward or rewind in the current track
+
+🔁 /loop <1-20>  
+ – Repeat the current song up to 20 times
+
+✨ Enjoy uninterrupted music with Anu Music Bot!
 </blockquote>"""
 
-    auth_commands = """**🔐 AUTHORIZATION COMMANDS**
+    blocklist_commands = """**🧩 BLOCKLIST COMMANDS**
 <blockquote>
-◾ /auth <reply|id>   – allow user to use player
-◾ /unauth <reply|id> – remove that permission
-◾ /authlist          – list authorized users
+🛡️ Manage user access with these simple tools:
+
+🔸 /block <reply or user_id>  
+ – Restrict a user from using the bot
+
+🔸 /unblock <reply or user_id>  
+ – Allow a blocked user back
+
+🔸 /blocklist  
+ – See the list of currently blocked users
+
+🌿 Keep your community peaceful and positive.
 </blockquote>"""
 
-    blocklist_commands = """**🚫 BLOCKLIST COMMANDS**
+    sudo_commands = """**🛠️ SUDO COMMANDS**
 <blockquote>
-◾ /block <reply|id>   – block user from bot
-◾ /unblock <reply|id> – unblock user
-◾ /blocklist          – view blocked list
+🔑 Manage trusted users who can control the bot:
+
+🔸 /addsudo <reply or user_id>  
+ – Grant sudo (admin) access to a user
+
+🔸 /rmsudo <reply or user_id>  
+ – Remove sudo access from a user
+
+🔸 /sudolist  
+ – View all current sudo users
+
+💡 Give access only to trusted people to avoid misuse.
 </blockquote>"""
 
-    sudo_commands = """**🔑 SUDO COMMANDS**
+
+    broadcast_commands = """**📡 BROADCAST COMMANDS**
 <blockquote>
-◾ /addsudo <reply|id> – add sudo user
-◾ /rmsudo <reply|id>  – remove sudo user
-◾ /sudolist           – list sudo users
+📢 Send announcements or updates across all chats:
+
+🔸 /broadcast  
+ – Copy and send a message to all active dialogs
+
+🔸 /fbroadcast  
+ – Forward a message to all active dialogs
+
+📝 Use this to share important news or updates quickly.
 </blockquote>"""
 
-    broadcast_commands = """**📢 BROADCAST COMMANDS**
+    tools_commands = """**🧰 TOOLS COMMANDS**
 <blockquote>
-◾ /broadcast   – copy a message to all dialogs
-◾ /fbroadcast  – forward a message to all dialogs
+🛠️ Useful utilities to manage chats easily:
+
+🔸 /del  
+ – Delete the replied message
+
+🔸 /tagall  
+ – Mention all members in the group
+
+🔸 /cancel  
+ – Stop the ongoing tagall process
+
+🔸 /powers  
+ – Check the bot’s permissions in the chat
+
+⚙️ Handy tools to keep your chats smooth and organized.
 </blockquote>"""
 
-    tools_commands = """**🛠️ TOOLS COMMANDS**
+    kang_commands = """**🧸 STICKERS & FUN COMMANDS**
 <blockquote>
-◾ /del        – delete replied message
-◾ /tagall     – mention all members
-◾ /cancel     – abort running tagall
-◾ /powers     – show bot permissions
+🎭 Bring some life to your chats with these fun tools:
+
+🎈 /kang  
+ – Save any sticker or image to your own pack
+
+📝 /mmf <text>  
+ – Write custom text over a photo or sticker
+
+💬 /qt <text>  
+ – Create a fake quote with the given text
+
+🎉 Perfect for memes, moods, and making your group lively!
 </blockquote>"""
 
-    kang_commands = """**🎨 STICKER & MEME COMMANDS**
+    status_commands = """**📈 STATUS & INFO COMMANDS**
 <blockquote>
-◾ /kang       – clone sticker/photo to your pack
-◾ /mmf <text> – write text on image/sticker
-◾ /qt <text>  – create fake quote sticker
+🔍 Check how the bot is performing and explore useful insights:
+
+📶 /ping  
+ – Check bot response time and uptime
+
+📊 /stats  
+ – View bot usage statistics
+
+🎙️ /ac  
+ – List currently active voice chats
+
+ℹ️ /about  
+ – Get info about a user, group, or channel
+
+🧠 Stay informed and in control with these handy commands.
 </blockquote>"""
 
-    status_commands = """**📊 STATUS & INFO COMMANDS**
+    owner_commands = """**👑 OWNER COMMANDS**
 <blockquote>
-◾ /ping       – latency & uptime
-◾ /stats      – bot usage stats
-◾ /ac         – active voice chats
-◾ /about      – user / group / channel info
-</blockquote>"""
+⚙️ Special controls only for the bot owner:
 
-    owner_commands = """**⚙️ OWNER COMMANDS**
-<blockquote>
-◾ /reboot     – restart the bot
-◾ /setwelcome – set custom /start message
-◾ /resetwelcome – Reset the welcome message and logo.
+🔁 /reboot  
+ – Restart the bot safely
+
+✍️ /setwelcome  
+ – Set a custom welcome message for /start
+
+🗑️ /resetwelcome  
+ – Reset the welcome message and remove the logo
+
+🔐 Use with care — these commands affect core bot behavior.
 </blockquote>"""
 
     # ---------- Navigation buttons ----------
     category_buttons = [
-        [
-            InlineKeyboardButton("🎵 Playback",   callback_data="commands_playback"),
-            InlineKeyboardButton("🔐 Auth",       callback_data="commands_auth"),
-        ],
-        [
-            InlineKeyboardButton("🚫 Blocklist",  callback_data="commands_blocklist"),
-            InlineKeyboardButton("🔑 Sudo",       callback_data="commands_sudo"),
-        ],
-        [
-            InlineKeyboardButton("📢 Broadcast",  callback_data="commands_broadcast"),
-            InlineKeyboardButton("🛠️ Tools",     callback_data="commands_tools"),
-        ],
-        [
-            InlineKeyboardButton("🎨 Kang/Meme",  callback_data="commands_kang"),
-            InlineKeyboardButton("📊 Status",     callback_data="commands_status"),
-        ],
-        [
-            InlineKeyboardButton("⚙️ Owner",      callback_data="commands_owner"),
-        ],
-        [InlineKeyboardButton("🏠 Home",         callback_data="commands_back")],
-    ]
+    [
+        InlineKeyboardButton("🎼 Music", callback_data="commands_playback"),
+        InlineKeyboardButton("🛡️ Auth", callback_data="commands_auth"),
+    ],
+    [
+        InlineKeyboardButton("🚷 Blocklist", callback_data="commands_blocklist"),
+        InlineKeyboardButton("🧑‍💼 Sudo", callback_data="commands_sudo"),
+    ],
+    [
+        InlineKeyboardButton("📣 Broadcast", callback_data="commands_broadcast"),
+        InlineKeyboardButton("🧩 Tools", callback_data="commands_tools"),
+    ],
+    [
+        InlineKeyboardButton("🖌️ Fun & Stickers", callback_data="commands_kang"),
+        InlineKeyboardButton("📊 Status", callback_data="commands_status"),
+    ],
+    [
+        InlineKeyboardButton("🔧 Owner Panel", callback_data="commands_owner"),
+    ],
+    [
+        InlineKeyboardButton("🏡 Main Menu", callback_data="commands_back")
+    ],
+]
 
-    back_button = [[InlineKeyboardButton("🔙 Back", callback_data="commands_all")]]
-
+back_button = [
+    [InlineKeyboardButton("🔙 Go Back", callback_data="commands_all")]
+]
     # ---------- Routing ----------
     if data == "all":
         await callback_query.message.edit_caption(
