@@ -1179,6 +1179,8 @@ async def user_client_start_handler(client, message):
 """
 
 # Create an instance of the Update class
+import logging
+
 async def format_welcome_message(client, text, chat_id, user_or_chat_name):
     """Helper function to format welcome message with real data"""
     try:
@@ -1191,7 +1193,7 @@ async def format_welcome_message(client, text, chat_id, user_or_chat_name):
         return formatted_text
     except Exception as e:
         logging.error(f"Error formatting welcome message: {str(e)}")
-        return text  # Return original text if formatting fails
+        return text # Return original text if formatting fails
 
 
 @Client.on_callback_query(filters.regex(r"commands_(.*)"))
